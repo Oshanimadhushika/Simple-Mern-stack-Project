@@ -1,0 +1,24 @@
+
+.dark-mode {
+  background-color: #000000;
+  color: #fff;
+  height: 100vh;
+}
+
+.light-mode {
+  background-color: #fffdfd;
+  color: #000000;
+  height: 100vh;
+}
+
+.dash-h1{
+  display: flex;
+  justify-content: center;
+}
+
+.dash-btn {
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+ 
+}
