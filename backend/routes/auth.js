@@ -1,3 +1,5 @@
+
+
 const express = require("express");
 const jwt = require("jsonwebtoken");
 
@@ -20,8 +22,8 @@ app.post("/api/signup", (req, res) => {
   }
 
   users.push({ username, email, password });
-  console.log(username, email, password);
 
+  console.log(username, email, password);
   res
     .status(201)
     .json({ success: true, message: "User registered successfully" });
@@ -47,9 +49,9 @@ app.post("/api/login", (req, res) => {
   res.status(200).json({ success: true, token });
 });
 
+
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });
-
 
 module.exports = app;
