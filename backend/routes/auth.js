@@ -2,6 +2,8 @@
 
 const express = require("express");
 const jwt = require("jsonwebtoken");
+const bcrypt = require("bcryptjs");
+require("dotenv").config();
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -21,6 +23,10 @@ app.post("/api/signup", (req, res) => {
       .json({ success: false, message: "User already exists" });
   }
 
+    // const hashedPassword = bcrypt.hashSync(password, 8);
+
+    // users.push({ username, email, password: hashedPassword });
+
   users.push({ username, email, password });
 
   console.log(username, email, password);
@@ -31,6 +37,14 @@ app.post("/api/signup", (req, res) => {
 
 app.post("/api/login", (req, res) => {
   const { email, password } = req.body;
+
+  //  const user = users.find((user) => user.email === email);
+
+  //  if (!user || !bcrypt.compareSync(password, user.password)) {
+  //    return res
+  //      .status(400)
+  //      .json({ success: false, message: "Invalid email or password" });
+  //  }
 
   const user = users.find(
     (user) => user.email === email && user.password === password
